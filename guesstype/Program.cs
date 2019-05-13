@@ -10,23 +10,23 @@ namespace guesstype
 {
     class GenericClass
     {
-        public void GuessType<T>(T vr)
+        public void GuessType<T>(T vr) // homework
         {
             Guid param = typeof(T).GUID;
             
             switch (param)
             {
-                case Guid r when (r == typeof(string).GUID):
+                case Guid r when (r == typeof(string).GUID):// homework
                     string vrstring = vr.ToString();
                     if (vrstring.Length == 5) { Console.WriteLine("You have put string with 5 symbols"); }
                     else if (vrstring.Length != 5) { Console.WriteLine("I dont know what type it is"); }
                     break;
-                case Guid r when r == typeof(int).GUID:
+                case Guid r when r == typeof(int).GUID:// homework
                     int vrint = Convert.ToInt32(vr);
                     if (vrint > 0) { Console.WriteLine("You have put positive number"); }
                     else if (vrint <= 0) { Console.WriteLine("I dont know what type it is"); }
                     break;
-                case Guid r when r == typeof(decimal).GUID:
+                case Guid r when r == typeof(decimal).GUID:// homework
                     decimal vrdec = Convert.ToDecimal(vr);
                     if (vrdec >= 10000)
                     {
@@ -35,7 +35,7 @@ namespace guesstype
                     }
                     else if (vrdec < 10000) { Console.WriteLine("I dont know what type it is"); }
                     break;
-                case Guid r when r == typeof(DateTime).GUID:
+                case Guid r when r == typeof(DateTime).GUID:// homework
                     Console.WriteLine("You have put Date");
                     break;
                 default:
@@ -51,10 +51,10 @@ namespace guesstype
         
         static void Main(string[] args)
         {
-            decimal ghg = 13545.666666666666666666m;
-            GenericClass d = new GenericClass();
-            d.GuessType(ghg);
-            Console.ReadLine();
+            decimal ghg = 13545.666666666666666666m;// homework
+            GenericClass d = new GenericClass();// homework
+            d.GuessType(ghg);// homework
+            Console.ReadLine();// homework
         }
     }
 }

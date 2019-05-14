@@ -12,31 +12,25 @@ namespace guesstype
     {
         public void GuessType<T>(T vr) // homework
         {
-            Guid param = typeof(T).GUID;
-            
-            switch (param)
+            // У меня  стояла версия языка 7.0, a прямое  сравнение переменной vr c 
+            //переменной r работает только на версии 7.1 и выше.
+
+            switch (vr)
             {
-                case Guid r when (r == typeof(string).GUID):// homework
-                    string vrstring = vr.ToString();
-                    if (vrstring.Length == 5) { Console.WriteLine("You have put string with 5 symbols"); }
-                    else if (vrstring.Length != 5) { Console.WriteLine("I dont know what type it is"); }
+                case string r:
+                    if (r.Length == 5) { Console.WriteLine("You have put string with 5 symbols"); }
+                    else if (r.Length != 5) { Console.WriteLine("I dont know what type it is"); }
                     break;
-                case Guid r when r == typeof(int).GUID:// homework
-                    int vrint = Convert.ToInt32(vr);
-                    if (vrint > 0) { Console.WriteLine("You have put positive number"); }
-                    else if (vrint <= 0) { Console.WriteLine("I dont know what type it is"); }
+                case int r:
+                    if (r > 0) { Console.WriteLine("You have put positive number"); }
+                    else if (r <= 0) { Console.WriteLine("I dont know what type it is"); }
                     break;
-                case Guid r when r == typeof(decimal).GUID:// homework
-                    decimal vrdec = Convert.ToDecimal(vr);
-                    if (vrdec >= 10000)
-                    {
-                        CultureInfo cult = CultureInfo.CreateSpecificCulture("en-US");
-                        Console.WriteLine(vrdec.ToString("#,##0.00000", cult));
-                    }
-                    else if (vrdec < 10000) { Console.WriteLine("I dont know what type it is"); }
+                case decimal r:
+                    if (r >= 10000) { Console.WriteLine("Decimal"); }
+                    if (r < 10000) { Console.WriteLine("I dont know what type it is"); }
                     break;
-                case Guid r when r == typeof(DateTime).GUID:// homework
-                    Console.WriteLine("You have put Date");
+                case DateTime r:
+                    Console.WriteLine("You have put Date"); 
                     break;
                 default:
                     Console.WriteLine("I dont know what type it is");
@@ -53,7 +47,7 @@ namespace guesstype
         {
             decimal ghg = 13545.666666666666666666m;// homework
             GenericClass d = new GenericClass();// homework
-            d.GuessType(ghg);// homework
+            d.GuessType("dfsdf");// homework
             Console.ReadLine();// homework
         }
     }
